@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BMI Checker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #f3f4f6; /* Soft Gray Background */
+        }
+        .bmi-card {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .w3-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .w3-theme-lighter {
+            background-color: #e3f2fd !important; /* Soft Blue */
+        }
+        .w3-theme-light {
+            background-color: #bbdefb !important; /* Lighter Blue */
+        }
+        .w3-theme-dark {
+            background-color: #64b5f6 !important; /* Soft Dark Blue */
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let resultBox = document.getElementById("result");
+            let bmi = weight / (height * height);
+            let status = "";
+            let color = "";
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                resultBox.innerHTML = "Please enter valid numbers.";
+                resultBox.style.backgroundColor = "white";
+                return;
+            }
+
+            if (bmi < 18.5) {
+                status = "Underweight";
+                color = "blue";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                status = "Normal";
+                color = "green";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                status = "Overweight";
+                color = "yellow";
+            } else if (bmi >= 30 && bmi <= 39.9) {
+                status = "Obese";
+                color = "orange";
+            } else {
+                status = "Extremely Obese";
+                color = "red";
+            }
+
+            resultBox.innerHTML = "BMI: " + bmi.toFixed(2) + " (" + status + ")";
+            resultBox.style.backgroundColor = color;
+            resultBox.style.color = "white";
+        }
+    </script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 w3-theme-dark w3-text-white">
+    <h2><i class="fa fa-heartbeat"></i> BMI Checker</h2>
+</header>
+
+<!-- Main Content -->
+<div class="w3-container w3-padding-32">
+    <div class="w3-card w3-round w3-padding bmi-card w3-theme-lighter w3-border">
+        <h3 class="w3-center"><i class="fa fa-balance-scale"></i> Calculate Your BMI</h3>
+        <p>Enter your weight (kg):</p>
+        <input class="w3-input w3-border w3-margin-bottom" type="number" id="weight" placeholder="Weight in kg">
+        <p>Enter your height (m):</p>
+        <input class="w3-input w3-border w3-margin-bottom" type="number" id="height" placeholder="Height in meters">
+        <button class="w3-button w3-theme-dark w3-round" onclick="calculateBMI()">Calculate</button>
+        <p class="w3-large w3-center w3-padding-16" id="result"></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-light w3-center w3-padding-16">
+    <p>Return to <a href="tools.html#bmi" class="w3-hover-text-green">TOOLS</a></p>
+</footer>
+
+</body>
+</html>

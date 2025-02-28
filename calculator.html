@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #f3f4f6; /* Soft Gray Background */
+        }
+        .calculator-card {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .w3-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .w3-theme-lighter {
+            background-color: #e3f2fd !important; /* Soft Blue */
+        }
+        .w3-theme-light {
+            background-color: #bbdefb !important; /* Lighter Blue */
+        }
+        .w3-theme-dark {
+            background-color: #64b5f6 !important; /* Soft Dark Blue */
+        }
+    </style>
+    <script>
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = 0;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("result").innerText = "Please enter valid numbers.";
+                return;
+            }
+
+            switch (operation) {
+                case "add":
+                    result = num1 + num2;
+                    break;
+                case "subtract":
+                    result = num1 - num2;
+                    break;
+                case "multiply":
+                    result = num1 * num2;
+                    break;
+                case "divide":
+                    result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+                    break;
+            }
+
+            document.getElementById("result").innerText = "Result: " + result;
+        }
+    </script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 w3-theme-dark w3-text-white">
+    <h2><i class="fa fa-calculator"></i> Simple Calculator</h2>
+</header>
+
+<!-- Main Content -->
+<div class="w3-container w3-padding-32">
+    <div class="w3-card w3-round w3-padding calculator-card w3-theme-lighter w3-border">
+        <h3 class="w3-center"><i class="fa fa-plus-square"></i> Perform Basic Calculations</h3>
+        <input class="w3-input w3-border w3-margin-bottom" type="number" id="num1" placeholder="Enter first number">
+        <input class="w3-input w3-border w3-margin-bottom" type="number" id="num2" placeholder="Enter second number">
+        <button class="w3-button w3-theme-dark w3-round" onclick="calculate('add')">Add</button>
+        <button class="w3-button w3-theme-dark w3-round" onclick="calculate('subtract')">Subtract</button>
+        <button class="w3-button w3-theme-dark w3-round" onclick="calculate('multiply')">Multiply</button>
+        <button class="w3-button w3-theme-dark w3-round" onclick="calculate('divide')">Divide</button>
+        <p class="w3-large w3-center w3-padding-16" id="result"></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-light w3-center w3-padding-16">
+    <p>Return to <a href="tools.html#calculator" class="w3-hover-text-green">TOOLS</a></p>
+</footer>
+
+</body>
+</html>
+

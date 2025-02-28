@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unit Converter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #f3f4f6; /* Soft Gray Background */
+        }
+        .converter-card {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .w3-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .w3-theme-lighter {
+            background-color: #e3f2fd !important; /* Soft Blue */
+        }
+        .w3-theme-light {
+            background-color: #bbdefb !important; /* Lighter Blue */
+        }
+        .w3-theme-dark {
+            background-color: #64b5f6 !important; /* Soft Dark Blue */
+        }
+    </style>
+    <script>
+        function convertUnits(type) {
+            let input = parseFloat(document.getElementById("inputValue").value);
+            let result = 0;
+            if (isNaN(input)) {
+                document.getElementById("result").innerText = "Please enter a valid number.";
+                return;
+            }
+
+            switch (type) {
+                case "cmToM":
+                    result = input / 100;
+                    document.getElementById("result").innerText = input + " cm = " + result + " m";
+                    break;
+                case "mToCm":
+                    result = input * 100;
+                    document.getElementById("result").innerText = input + " m = " + result + " cm";
+                    break;
+                case "mToKm":
+                    result = input / 1000;
+                    document.getElementById("result").innerText = input + " m = " + result + " km";
+                    break;
+                case "kmToM":
+                    result = input * 1000;
+                    document.getElementById("result").innerText = input + " km = " + result + " m";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 w3-theme-dark w3-text-white">
+    <h2><i class="fa fa-exchange"></i> Unit Converter</h2>
+</header>
+
+<!-- Main Content -->
+<div class="w3-container w3-padding-32">
+    <div class="w3-card w3-round w3-padding converter-card w3-theme-lighter w3-border">
+        <h3 class="w3-center"><i class="fa fa-calculator"></i> Convert Units</h3>
+        <input class="w3-input w3-border w3-margin-bottom" type="number" id="inputValue" placeholder="Enter value">
+        <button class="w3-button w3-theme-dark w3-round" onclick="convertUnits('cmToM')">CM to M</button>
+        <button class="w3-button w3-theme-dark w3-round" onclick="convertUnits('mToCm')">M to CM</button>
+        <button class="w3-button w3-theme-dark w3-round" onclick="convertUnits('mToKm')">M to KM</button>
+        <button class="w3-button w3-theme-dark w3-round" onclick="convertUnits('kmToM')">KM to M</button>
+        <p class="w3-large w3-center w3-padding-16" id="result"></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-light w3-center w3-padding-16">
+    <p>Return to <a href="tools.html#unit" class="w3-hover-text-green">TOOLS</a></p>
+</footer>
+
+</body>
+</html>
+
+

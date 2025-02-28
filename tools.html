@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PHUA YU CHENG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Lato", sans-serif;
+        }
+        body, html {
+            height: 100%;
+            color: #777;
+            line-height: 1.8;
+        }
+        .w3-theme-light {
+            background-color: #f1f1f1 !important;
+        }
+        .bgimg-1 {
+            background-image: url('background5.jpg');
+            min-height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .w3-hover-box:hover {
+            transform: scale(1.03);
+            transition: 0.3s;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .w3-wide {
+            letter-spacing: 10px;
+        }
+        .w3-hover-opacity {
+            cursor: pointer;
+        }
+        @media only screen and (max-device-width: 1600px) {
+            .bgimg-1 {
+                background-attachment: scroll;
+                min-height: 400px;
+            }
+        }
+    </style>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar w3-card w3-animate-top w3-white";
+            } else {
+                navbar.className = "w3-bar w3-transparent";
+            }
+        }
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        </script>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-transparent" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i></a>
+        <a href="#home" class="w3-bar-item w3-button">HOME</a>
+        <a href="#calculator" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calculator"></i> CALCULATOR</a>
+        <a href="#bmi" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-child"></i> BMI CHECKER</a>
+        <a href="#zakat" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-money"></i> ZAKAT CALCULATOR</a>
+        <a href="#unit" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-plus-circle"></i> UNIT CONVERTER</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red"><i class="fa fa-search"></i></a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#calculator" class="w3-bar-item w3-button" onclick="toggleFunction()">CALCULATOR</a>
+        <a href="#bmi" class="w3-bar-item w3-button" onclick="toggleFunction()">BMI CHECKER</a>
+        <a href="#zakat" class="w3-bar-item w3-button" onclick="toggleFunction()">ZAKAT CALCULATOR</a>
+        <a href="#unit" class="w3-bar-item w3-button" onclick="toggleFunction()">UNIT CONVERTER</a>
+        <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+    </div>
+</div>
+
+<!-- Header -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+    <div class="w3-display-middle">
+        <span class="w3-center w3-round w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+            <b><i class="fa fa-code"></i> TOOLS</b>
+        </span>
+    </div>
+</div>
+
+<!-- Tools Section -->
+<div class="w3-content w3-container w3-padding-64" id="tools">
+    <h2 class="w3-center"><b>MY WORK</b></h2>
+    <p class="w3-center"><em>Here are some of my latest coding programs. Click on the section to use it.</em></p><br>
+
+    <!-- Calculator -->
+    <div class="w3-content w3-container w3-padding-64 w3-hover-box" onclick="window.location.href='calculator.html'" id="calculator">
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="calculator.png" class="w3-round w3-image" width="500">
+            </div>
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+                <h3><b>Calculator</b></h3>
+                <p>The Simple Calculator performs basic arithmetic operations like addition, subtraction, multiplication, and division.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BMI Checker -->
+    <div class="w3-content w3-container w3-padding-64 w3-hover-box" onclick="window.location.href='bmi.html'" id="bmi">
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="bmi.jpg" class="w3-round w3-image" width="500">
+            </div>
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+                <h3><b>BMI Checker</b></h3>
+                <p>The BMI Checker calculates Body Mass Index (BMI) and determines if you're underweight, normal, overweight, or obese.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zakat Calculator -->
+    <div class="w3-content w3-container w3-padding-64 w3-hover-box" onclick="window.location.href='zakat.html'" id="zakat">
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="income.jpg" class="w3-round w3-image" width="500">
+            </div>
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+                <h3><b>Zakat Calculator</b></h3>
+                <p>The Zakat Calculator helps calculate 2.5% Zakat based on your yearly income.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unit Converter -->
+    <div class="w3-content w3-container w3-padding-64 w3-hover-box" onclick="window.location.href='unit.html'" id="unit">
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="unit.jpg" class="w3-round w3-image" width="500">
+            </div>
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+                <h3><b>Unit Converter</b></h3>
+                <p>The Unit Converter quickly converts between centimeters, meters, and kilometers.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-light w3-center w3-padding-16">
+    <p>Return to <a href="index.html#tools" class="w3-hover-text-green">PHUA YU CHENG</a></p>
+</footer>
+
+</body>
+</html>
+
+
+
+
