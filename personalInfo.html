@@ -8,52 +8,39 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
-.w3-theme-light {
-    background-color: #f1f1f1 !important; 
-}
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+    body, html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+    .w3-theme {
+    background-color: #3a3a3a !important; /* Dark Grey */
+    color: white !important;
+    }   
+    .w3-theme-light {
+        background-color: #f1f1f1 !important; 
+    }
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+    .bgimg-1{
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('background5.jpg');
+        min-height: 100%;
+    }
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('background5.jpg');
-  min-height: 100%;
-}
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("background2.jpg");
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("background4.jpg");
-  min-height: 400px;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+    .bgimg-1 {
+        background-attachment: scroll;
+        min-height: 400px;
+    }
+    }
 </style>
 <script>
     window.onscroll = function() {scrollFunction()};
@@ -99,7 +86,7 @@ body, html {
     </div>
 </div>
 
-<!-- First Parallax Image with Logo Text -->
+<!-- First Parallax Image with Personal Info Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
     <div class="w3-display-middle" style="white-space:nowrap;">
         <span class="w3-center w3-round w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><b><i class="fa fa-user w3-margin-right"></i>PERSONAL INFO</b></span>
@@ -110,29 +97,28 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="about">
     <div class="w3-row">
         <div class="w3-col m6 w3-center w3-padding-large">
-        <img src="phua1.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
-    </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-        <p><b>ABOUT ME</b></p>
-        <br>
-        <p> Phua Yu Cheng <br>A23DW1062</p>
-        <br>
-        <p>
-            I am a Diploma in Computer Science, Section 43 student at UTM SPACE with a strong interest in web development, coding, and technology. 
-            In my free time, I enjoy building websites, exploring programming languages, and playing strategy games. 
-            As a Student Representative Council (MPP) member, I help students, organize events, and improve student life.
-        </p>
-        <br>
-        <p>
-            I also work on personal projects, developing web applications and trying out new software tools. 
-            I always look for ways to improve my skills and stay updated with tech trends. 
-            Feel free to explore my website and try out the tools I’ve built!
-        </p>
+            <img src="phua1.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
+        </div>
+        
+        <!-- Hide this text on small devices -->
+        <div class="w3-col m6 w3-hide-small w3-padding-large">
+            <p><b>ABOUT ME</b></p>
+            <br>
+            <p> Phua Yu Cheng <br>A23DW1062</p>
+            <br>
+            <p>
+                I am a Diploma in Computer Science, Section 43 student at UTM SPACE with a strong interest in web development, coding, and technology. 
+                In my free time, I enjoy building websites, exploring programming languages, and playing strategy games. 
+                As a Student Representative Council (MPP) member, I help students, organize events, and improve student life.
+            </p>
+            <br>
+            <p>
+                I also work on personal projects, developing web applications and trying out new software tools. 
+                I always look for ways to improve my skills and stay updated with tech trends. 
+                Feel free to explore my website and try out the tools I’ve built!
+            </p>
     </div>
 </div>
-
 
 <!-- Container (Education Section) -->
 <div class="w3-content w3-container w3-padding-64" id="education">
@@ -168,7 +154,7 @@ body, html {
     </div>
 </div>
 
-<!-- Container (Portfolio Section) -->
+<!-- Container (Good Section) -->
 <div class="w3-content w3-container w3-padding-64" id="resume">
     <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
     <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
@@ -190,11 +176,9 @@ body, html {
         </div>
     </div>
 </div>
-    <footer class="w3-container w3-theme-light w3-center w3-padding-16">
-        <p>Return to <a href="index.html#personalInfo" class="w3-hover-text-green">PHUA YU CHENG</a></p>
-    </footer>
 
+<footer class="w3-container w3-theme-light w3-center w3-padding-16">
+    <p>Return to <a href="index.html#personalInfo" class="w3-hover-text-green">PHUA YU CHENG</a></p>
+</footer>
 </body>
 </html>
-
-
